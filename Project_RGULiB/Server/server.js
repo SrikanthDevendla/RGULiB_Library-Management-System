@@ -225,32 +225,6 @@ app.post('/userlogin',(req,res)=>{
     })
   })
 
-// app.get('/admin/:username',(req,res) => {
-//     const username=req.params.username;
-//     const sql="select * from users where username= ?";
-//     con.query(sql,[username],(err,result) => {
-//         if(err) return res.json({Error:"Get user error in sql"});
-//         return res.json({Status:"Success",Result:result})
-//     })
-// })
-// app.get('/edituser/:username', (req, res) => {
-//     const username = req.params.username;
-//     console.log("username in useredit:" + username);
-//     const sql = "select bookname from borrow where username=?";
-    
-//     con.query(sql, [username], (err, queryResult) => {
-//       if (err) {
-//         console.error("Error fetching user details:", err);
-//         return res.json({ Error: "An error occurred while fetching user details" });
-//       }
-//       if(result.length>0){
-//       return res.json({ Status: "Success", Result: queryResult });
-//       }
-//       else{
-//         return res.json({Status:"Success",Result:null});
-//       }
-//     });
-//   });
 app.get('/useredit/:username', (req, res) => {
     const username = req.params.username;
     console.log("username in useredit:" + username);
@@ -310,17 +284,6 @@ app.post('/register',upload.single('image'),(req,res) => {
         })
     })
 })
-// app.get('/userdashboard/userdetail/:username',(req,res) => {
-//     // const username=req.params.username;
-//     const username=req.body.username;
-//     console.log("uername get"+username);
-//     const sql="select * from register where username= ?";
-//     con.query(sql,[username],(err,result) => {
-//         if(err) return res.json({Error:"Get user error in sql"});
-//         console.log("result"+result);
-//         return res.json({Status:"Success",Result:result})
-//     })
-// })
 app.get('/userdashboard/userdetail/:username', (req, res) => {
     const username = req.params.username;
     console.log("Username get: " + username);
